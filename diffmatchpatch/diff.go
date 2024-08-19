@@ -1146,13 +1146,13 @@ func (dmp *DiffMatchPatch) DiffPrettyText(diffs []Diff) string {
 
 		switch diff.Type {
 		case DiffInsert:
-			_, _ = buff.WriteString("\x1b[32m")
+			_, _ = buff.WriteString("<b>")
 			_, _ = buff.WriteString(text)
-			_, _ = buff.WriteString("\x1b[0m")
+			_, _ = buff.WriteString("</b>")
 		case DiffDelete:
-			_, _ = buff.WriteString("\x1b[31m")
+			_, _ = buff.WriteString("<s>")
 			_, _ = buff.WriteString(text)
-			_, _ = buff.WriteString("\x1b[0m")
+			_, _ = buff.WriteString("</s>")
 		case DiffEqual:
 			_, _ = buff.WriteString(text)
 		}
